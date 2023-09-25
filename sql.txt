@@ -1,0 +1,25 @@
+-- Erstelle die Datenbank, wenn sie nicht vorhanden ist
+CREATE DATABASE IF NOT EXISTS warenkorbsystem;
+
+-- Wechsle zur Datenbank
+USE warenkorbsystem;
+
+-- Erstelle die Tabelle "produkte"
+CREATE TABLE IF NOT EXISTS produkte (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produktname VARCHAR(255),
+    preis DECIMAL(10, 2),
+    beschreibung TEXT
+);
+
+-- Erstelle die Tabelle "warenkorb"
+CREATE TABLE IF NOT EXISTS warenkorb (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    benutzer_id INT,
+    produkt_id INT,
+    anzahl INT,
+    FOREIGN KEY (benutzer_id) REFERENCES benutzer(id),
+    FOREIGN KEY (produkt_id) REFERENCES produkte(id)
+);
+
+
