@@ -1,1 +1,1 @@
-SELECT * FROM warenkorb
+SELECT * FROM produkte
