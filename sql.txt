@@ -27,3 +27,6 @@ CREATE TABLE Warenkorb (
     PRIMARY KEY (warenkorb_id),
     FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
+
+ALTER TABLE Warenkorb 
+ADD product_amount INT NOT NULL ;

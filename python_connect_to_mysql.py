@@ -7,7 +7,5 @@ conn = mysql.connector.connect(host = 'localhost',
 
 my_cursor = conn.cursor()
 
-conn.commit()
-conn.close()
+my_cursor.execute("ALTER TABLE Warenkorb ADD COLUMN product_amount INT NOT NULL")
 
-print('Connection succesfully created!')
